@@ -23,3 +23,17 @@
 .navItem {
   padding: var(--spacing-1) calc(var(--spacing-1) * 2);
 }
+
+.navItem:hover {
+  background-color: #1d1d1b08;
+  border-radius: var(--spacing-1);
+}
+
+.active {
+  border-radius: var(--spacing-1);
+  background-color: var(--selected-color);
+}
+
+.active:hover {
+  background-color: var(--selected-color);
+}

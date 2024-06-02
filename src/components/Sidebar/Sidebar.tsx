@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import classnames from "classnames";
 import styles from "./Sidebar.module.css";
 import logo from "/qonto.svg";
 
@@ -23,13 +24,17 @@ export const Sidebar = () => {
       <ul className={styles.navigationMenu}>
         {navigation.map((navItem) => {
           return (
-            <Link
+            <NavLink
               key={navItem.title}
-              className={styles.navItem}
+              className={({ isActive }) =>
+                classnames(styles.navItem, {
+                  [styles.active]: isActive,
+                })
+              }
               to={navItem.path}
             >
               {navItem.title}
-            </Link>
+            </NavLink>
           );
         })}
       </ul>
