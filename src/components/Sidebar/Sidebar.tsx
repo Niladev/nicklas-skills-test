@@ -6,7 +6,7 @@ import logo from "/qonto.svg";
 const navigation = [
   {
     title: "History",
-    path: "/transations",
+    path: "/transactions",
   },
   {
     title: "Cards",
