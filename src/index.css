@@ -4,6 +4,9 @@
   --highlight-color: #f9f9f7;
   --spacing-1: 8px;
 }
+* {
+  box-sizing: border-box;
+}
 
 body,
 #root {
