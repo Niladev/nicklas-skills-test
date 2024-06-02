@@ -1,3 +1,9 @@
+import { Header } from "../components/Header/Header";
+
 export const Cards = () => {
-  return <div>Cards</div>;
+  return (
+    <div>
+      <Header title={"Cards"} />
+    </div>
+  );
 };

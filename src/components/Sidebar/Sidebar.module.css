@@ -1,0 +1,6 @@
+.navigation {
+  width: 18%;
+  height: 100%;
+  background-color: var(--highlight-color);
+  border-right: 1px solid var(--border-color);
+}
