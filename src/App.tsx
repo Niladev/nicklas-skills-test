@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Transactions } from "./pages/Transactions/Transactions";
-import { Cards } from "./pages/Cards";
+
 import { Layout } from "./components/Layout/Layout";
+import { Cards } from "./pages/Cards/Cards";
 
 function App() {
   return (
