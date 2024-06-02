@@ -5,7 +5,7 @@ export const Transactions = () => {
   const { transactionId } = useParams();
   return (
     <div>
-      <Header title={"Transactions"} />
+      <Header title={"History"} />
       {transactionId || "No id"}
     </div>
   );
