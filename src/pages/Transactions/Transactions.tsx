@@ -2,7 +2,6 @@ import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import { useApi } from "../../hooks/useApi";
 import { TableColumn, Transaction, TransactionResponse } from "../../types";
-import { Loading } from "../../components/Loading/Loading";
 import styles from "./Transactions.module.css";
 import { Table } from "../../components/Table/Table";
 import { useMemo } from "react";
@@ -61,9 +60,7 @@ export const Transactions = () => {
       <div className={styles.main}>
         <Header title={"History"} />
         <div className={styles.content}>
-          {isLoading || !data ? (
-            <Loading />
-          ) : (
+          {isLoading || !data ? null : (
             <Table
               onRowClick={handleClick}
               columns={columns}
