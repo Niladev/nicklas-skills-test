@@ -1,0 +1,16 @@
+.contentWrapper {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.transactionSidebar {
+  flex-basis: 29%;
+  background-color: var(--highlight-color);
+  height: 100%;
+  border-left: 1px solid var(--border-color);
+}
