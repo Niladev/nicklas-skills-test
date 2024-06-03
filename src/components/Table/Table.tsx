@@ -6,14 +6,16 @@ import styles from "./Table.module.css";
 export const Table = <T extends Record<string, unknown>>({
   data,
   columns,
+  onRowClick,
 }: {
   data: T[];
   columns: TableColumn<T>[];
+  onRowClick: (rowId: string) => void;
 }) => {
   return (
     <div className={styles.table}>
       <TableHeader columns={columns} />
-      <TableBody<T> columns={columns} rows={data} />
+      <TableBody<T> onRowClick={onRowClick} columns={columns} rows={data} />
     </div>
   );
 };

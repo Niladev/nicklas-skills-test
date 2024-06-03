@@ -8,15 +8,20 @@ import styles from "./TableBody.module.css";
 export const TableBody = <T extends Record<keyof T | "id", unknown>>({
   rows,
   columns,
+  onRowClick,
 }: {
   rows: T[];
   columns: TableColumn<T>[];
+  onRowClick: (rowId: string) => void;
 }) => {
   return (
     <div className={styles.body}>
       {rows.map((row) => {
         return (
-          <Row key={row.id as string}>
+          <Row
+            onClick={() => onRowClick(row.id as string)}
+            key={row.id as string}
+          >
             {columns.map(({ accessor, type }) => {
               const cellData = row[accessor] ? row[accessor] : null;
 

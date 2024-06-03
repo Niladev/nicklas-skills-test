@@ -11,6 +11,7 @@
 
 .transactionSidebar {
   display: flex;
+  flex-direction: column;
   flex-basis: 29%;
   background-color: var(--highlight-color);
   height: 100%;

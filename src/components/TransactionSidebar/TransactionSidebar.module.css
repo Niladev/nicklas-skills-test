@@ -1,0 +1,34 @@
+.transactionSidebar {
+  display: flex;
+  flex-basis: 29%;
+  background-color: var(--highlight-color);
+  height: 100%;
+  border-left: 1px solid var(--border-color);
+  justify-content: center;
+  align-items: center;
+}
+
+.transactionWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  padding: calc(var(--spacing-1) * 2);
+}
+
+.transactionTitle {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--spacing-1) * 2.5);
+  text-transform: capitalize;
+}
+
+.subtitle {
+  color: #636360;
+  font-size: 12px;
+}
