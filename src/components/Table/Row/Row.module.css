@@ -10,3 +10,8 @@
 .row:nth-child(n + 1):hover {
   background-color: var(--highlight-color);
 }
+
+.active,
+.row.active:hover {
+  background-color: var(--selected-color);
+}
