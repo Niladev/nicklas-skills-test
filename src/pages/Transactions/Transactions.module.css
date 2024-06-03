@@ -6,11 +6,15 @@
 
 .main {
   flex-grow: 1;
+  height: 100%;
 }
 
 .transactionSidebar {
+  display: flex;
   flex-basis: 29%;
   background-color: var(--highlight-color);
   height: 100%;
   border-left: 1px solid var(--border-color);
+  justify-content: center;
+  align-items: center;
 }

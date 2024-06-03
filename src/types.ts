@@ -2,7 +2,7 @@ export interface Attachment {
   url: string;
 }
 
-export interface Transaction {
+export type Transaction = {
   id: string;
   created_at: string;
   counterparty_name: string;
@@ -12,4 +12,14 @@ export interface Transaction {
   currency: string;
   operation_type: string;
   attachments: Attachment[];
+};
+
+export interface TransactionResponse {
+  transactions: Transaction[];
+}
+
+export interface TableColumn<T> {
+  label: string;
+  accessor: keyof T;
+  type: "text" | "currency" | "date";
 }
