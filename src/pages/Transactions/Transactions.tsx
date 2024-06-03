@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { Header } from "../../components/Header/Header";
 import { useApi } from "../../hooks/useApi";
 import { TableColumn, Transaction, TransactionResponse } from "../../types";
@@ -10,6 +10,7 @@ import { TransactionSidebar } from "../../components/TransactionSidebar/Transact
 
 export const Transactions = () => {
   const { transactionId } = useParams();
+  const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const { data, isLoading, error } =
     useApi<TransactionResponse>("transactions");
@@ -49,8 +50,10 @@ export const Transactions = () => {
   ];
 
   const handleClick = (transactionId: string) => {
-    console.log("selected ");
-    navigate(`/transactions/${transactionId}`);
+    navigate({
+      pathname: `/transactions/${transactionId}`,
+      search: searchParams.toString(),
+    });
   };
 
   return (
@@ -61,7 +64,7 @@ export const Transactions = () => {
           {isLoading || !data ? (
             <Loading />
           ) : (
-            <Table<Transaction>
+            <Table
               onRowClick={handleClick}
               columns={columns}
               data={data.transactions}

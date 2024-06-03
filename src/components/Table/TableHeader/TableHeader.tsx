@@ -5,16 +5,24 @@ import styles from "./TableHeader.module.css";
 
 import chevron from "./../../../assets/chevron-up-down.svg";
 import arrowDown from "./../../../assets/arrow-down.svg";
-import { useSearchParams } from "react-router-dom";
+import {
+  createSearchParams,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 
 export const TableHeader = <T,>({ columns }: { columns: TableColumn<T>[] }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const order = searchParams.get("order");
   const sortBy = searchParams.get("sort_by");
   const handleSearchParam = (accessor: string) => {
-    setSearchParams({
-      sort_by: accessor,
-      order: order === "desc" ? "asc" : "desc",
+    navigate({
+      pathname: "/transactions",
+      search: createSearchParams({
+        sort_by: accessor,
+        order: order === "desc" ? "asc" : "desc",
+      }).toString(),
     });
   };
 
