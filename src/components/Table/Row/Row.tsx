@@ -14,6 +14,7 @@ export const Row = ({
 }) => {
   return (
     <div
+      role="row"
       onClick={onClick ? () => onClick() : undefined}
       className={classNames(styles.row, className, {
         [styles.active]: active,

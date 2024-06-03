@@ -11,7 +11,7 @@ export type Transaction = {
   amount: string;
   currency: string;
   operation_type: string;
-  attachments: Attachment[];
+  attachements: Attachment[];
 };
 
 export interface TransactionResponse {

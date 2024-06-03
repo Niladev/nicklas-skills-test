@@ -10,7 +10,11 @@ export const Cell = ({
   onClick?: () => void;
 }) => {
   return (
-    <div onClick={onClick} className={[styles.cell, className].join(" ")}>
+    <div
+      role="cell"
+      onClick={onClick}
+      className={[styles.cell, className].join(" ")}
+    >
       {children}
     </div>
   );

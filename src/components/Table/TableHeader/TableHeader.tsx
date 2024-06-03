@@ -36,14 +36,15 @@ export const TableHeader = <T,>({ columns }: { columns: TableColumn<T>[] }) => {
             key={accessor as string}
           >
             {label}{" "}
-            {sortable && searchParams.get("sort_by") !== accessor && (
+            {sortable && sortBy !== accessor && (
               <img src={chevron} alt={"Chevron sort"} />
             )}
             {sortable && sortBy === accessor && (
               <img
+                data-testid="sortIcon"
                 className={order === "asc" ? styles.sortUp : ""}
                 src={arrowDown}
-                alt={"Sort descending"}
+                alt={order === "asc" ? "Sort ascending" : "Sort descending"}
               />
             )}
           </Cell>

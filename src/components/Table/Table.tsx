@@ -27,6 +27,14 @@ export const Table = ({
         "sort_by"
       ) as keyof Transaction;
 
+      const isColumnSortable = columns.filter(
+        (column) => column.sortable && column.accessor === sort
+      );
+
+      if (isColumnSortable.length === 0) {
+        return data;
+      }
+
       return data.sort((a, b) => {
         if (
           sort &&
@@ -64,10 +72,10 @@ export const Table = ({
     }
 
     return data;
-  }, [searchParams, data]);
+  }, [searchParams, data, columns]);
 
   return (
-    <div className={styles.table}>
+    <div role="table" className={styles.table}>
       <TableHeader columns={columns} />
       <TableBody<Transaction>
         onRowClick={onRowClick}
