@@ -6,12 +6,12 @@ import { DateCell } from "../TableCells/Date";
 import { TextCell } from "../TableCells/Text";
 import styles from "./TableBody.module.css";
 
-export const TableBody = <T extends Record<keyof T | "id", unknown>>({
+export const TableBody = <T,>({
   rows,
   columns,
   onRowClick,
 }: {
-  rows: T[];
+  rows: ({ id: string } & T)[];
   columns: TableColumn<T>[];
   onRowClick: (rowId: string) => void;
 }) => {

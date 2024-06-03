@@ -9,12 +9,12 @@ export const Row = ({
 }: {
   children: ReactNode;
   className?: string;
-  onClick: () => void;
-  active: boolean;
+  onClick?: () => void;
+  active?: boolean;
 }) => {
   return (
     <div
-      onClick={() => onClick()}
+      onClick={onClick ? () => onClick() : undefined}
       className={classNames(styles.row, className, {
         [styles.active]: active,
       })}

@@ -22,4 +22,5 @@ export interface TableColumn<T> {
   label: string;
   accessor: keyof T;
   type: "text" | "currency" | "date";
+  sortable?: boolean;
 }

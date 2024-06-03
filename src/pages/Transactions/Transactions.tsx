@@ -38,11 +38,13 @@ export const Transactions = () => {
       label: "Payment date",
       accessor: "created_at",
       type: "date",
+      sortable: true,
     },
     {
       label: "Amount",
       accessor: "amount",
       type: "currency",
+      sortable: true,
     },
   ];
 
