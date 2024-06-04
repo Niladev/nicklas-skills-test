@@ -19,7 +19,7 @@ export const TransactionSidebar = ({
     });
 
   return (
-    <div className={styles.transactionSidebar}>
+    <div data-testid="transactionSidebar" className={styles.transactionSidebar}>
       {!transaction && <p>No transactions selected</p>}
       {transaction && (
         <div className={styles.transactionWrapper}>
