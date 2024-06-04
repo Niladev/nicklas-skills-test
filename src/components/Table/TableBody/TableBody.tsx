@@ -11,7 +11,7 @@ export const TableBody = <T,>({
   columns,
   onRowClick,
 }: {
-  rows: ({ id: string } & T)[];
+  rows: ({ id: string; currency?: string } & T)[];
   columns: TableColumn<T>[];
   onRowClick: (rowId: string) => void;
 }) => {
@@ -48,6 +48,7 @@ export const TableBody = <T,>({
                     <CurrencyCell
                       key={accessor as string}
                       data={cellData as string}
+                      currency={row?.currency || ""}
                     />
                   );
                 default:
